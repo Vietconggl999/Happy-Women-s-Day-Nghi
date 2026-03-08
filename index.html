@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Happy Women's Day</title>
+
+<style>
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(#87CEEB,#E0F7FA);
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+overflow:hidden;
+position: relative;
+}
+
+/* ===== HIỆU ỨNG NỀN VƯỜN HOA ===== */
+
+/* Mặt trời lớn */
+.sun {
+position: absolute;
+top: 30px;
+right: 50px;
+font-size: 100px;
+animation: sunGlow 4s ease-in-out infinite;
+z-index: 1;
+}
+
+@keyframes sunGlow {
+0%, 100% { filter: brightness(1); transform: scale(1); }
+50% { filter: brightness(1.2); transform: scale(1.05); }
+}
+
+/* Mây trôi */
+.cloud {
+position: absolute;
+font-size: 80px;
+animation: cloudFloat 25s linear infinite;
+opacity: 0.9;
+z-index: 1;
+}
+
+@keyframes cloudFloat {
+0% { transform: translateX(-150px); }
+100% { transform: translateX(110vw); }
+}
+
+/* Chim bay */
+.bird {
+position: absolute;
+font-size: 60px;
+animation: birdFly 15s linear infinite;
+z-index: 1;
+}
+
+@keyframes birdFly {
+0% { transform: translateX(-100px) translateY(0); }
+25% { transform: translateX(25vw) translateY(-30px); }
+50% { transform: translateX(50vw) translateY(0); }
+75% { transform: translateX(75vw) translateY(30px); }
+100% { transform: translateX(110vw) translateY(0); }
+}
+
+/* Cỏ lớn ở dưới */
+.grass {
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 150px;
+overflow: hidden;
+z-index: 1;
+}
+
+.grass::before {
+content: '';
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: linear-gradient(to top, #2E7D32, #66BB6A);
+border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+}
+
+/* Cỏ đung đưa */
+.grass-blade {
+position: absolute;
+bottom: 0;
+font-size: 50px;
+animation: grassSway 3s ease-in-out infinite;
+z-index: 2;
+}
+
+@keyframes grassSway {
+0%, 100% { transform: rotate(-3deg); }
+50% { transform: rotate(3deg); }
+}
+
+/* Hoa lớn trong vườn */
+.garden-flower {
+position: absolute;
+bottom: 80px;
+font-size: 70px;
+animation: flowerBloom 2s ease-out forwards;
+z-index: 2;
+}
+
+@keyframes flowerBloom {
+0% { transform: scale(0); opacity: 0; }
+100% { transform: scale(1); opacity: 1; }
+}
+
+/* Hoa đung đưa theo gió */
+.swaying-flower {
+position: absolute;
+bottom: 100px;
+font-size: 60px;
+animation: flowerSway 4s ease-in-out infinite;
+z-index: 2;
+}
+
+@keyframes flowerSway {
+0%, 100% { transform: rotate(-5deg); }
+50% { transform: rotate(5deg); }
+}
+
+/* Cây lớn hai bên */
+.tree {
+position: absolute;
+font-size: 150px;
+animation: treeSway 6s ease-in-out infinite;
+z-index: 2;
+}
+
+@keyframes treeSway {
+0%, 100% { transform: rotate(-2deg); }
+50% { transform: rotate(2deg); }
+}
+
+/* ===== THẺ BÀI ===== */
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+width:360px;
+animation: fadeIn 1s ease-out;
+z-index: 10;
+position: relative;
+}
+
+h1{
+color:#ff2e83;
+font-size: 3.5rem;
+margin-bottom: 10px;
+margin-top: 0;
+}
+
+button{
+padding:12px 25px;
+border:none;
+background:#ff4da6;
+color:white;
+font-size:18px;
+border-radius:10px;
+cursor:pointer;
+transition: transform 0.2s, background 0.2s;
+}
+
+button:hover{
+background:#ff1a8c;
+transform: scale(1.05);
+}
+
+.smallHeart{
+position:absolute;
+font-size:18px;
+animation:fly 1s forwards;
+}
+
+@keyframes fly{
+to{
+transform:translate(var(--x),var(--y));
+opacity:0;
+}
+}
+
+.bigHeart{
+font-size:120px;
+color:red;
+animation:pop 0.6s ease;
+}
+
+@keyframes pop{
+0%{transform:scale(0)}
+80%{transform:scale(1.2)}
+100%{transform:scale(1)}
+}
+
+.hidden{
+display:none;
+}
+
+.message{
+font-size:16px;
+margin-top:20px;
+color:#d6006b;
+line-height: 1.6;
+text-align: center;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Mặt trời -->
+<div class="sun">☀️</div>
+
+<!-- Mây trôi -->
+<div class="cloud" style="top: 50px; left: -150px;">☁️</div>
+<div class="cloud" style="top: 100px; left: -200px; animation-delay: 8s;">☁️</div>
+<div class="cloud" style="top: 30px; left: -100px; animation-delay: 15s;">☁️</div>
+
+<!-- Chim bay -->
+<div class="bird" style="top: 80px; animation-delay: 0s;">🐦</div>
+<div class="bird" style="top: 120px; animation-delay: 7s;">🐦</div>
+
+<!-- Cây lớn hai bên -->
+<div class="tree" style="top: 50px; left: -50px;">🌳</div>
+<div class="tree" style="top: 50px; right: -50px;">🌴</div>
+
+<!-- Cỏ đung đưa -->
+<div class="grass-blade" style="left: 10%;">🌿</div>
+<div class="grass-blade" style="left: 25%;">🌱</div>
+<div class="grass-blade" style="left: 40%;">🌿</div>
+<div class="grass-blade" style="left: 55%;">🌱</div>
+<div class="grass-blade" style="left: 70%;">🌿</div>
+<div class="grass-blade" style="left: 85%;">🌱</div>
+
+<!-- Hoa lớn trong vườn -->
+<div class="garden-flower" style="left: 5%;">🌸</div>
+<div class="garden-flower" style="left: 20%; animation-delay: 0.5s;">🌺</div>
+<div class="garden-flower" style="left: 35%; animation-delay: 1s;">🌻</div>
+<div class="garden-flower" style="left: 50%; animation-delay: 1.5s;">🌷</div>
+<div class="garden-flower" style="left: 65%; animation-delay: 2s;">🌹</div>
+<div class="garden-flower" style="left: 80%; animation-delay: 2.5s;">🌼</div>
+<div class="garden-flower" style="left: 95%; animation-delay: 3s;">🌺</div>
+
+<!-- Hoa đung đưa -->
+<div class="swaying-flower" style="left: 15%;">🌸</div>
+<div class="swaying-flower" style="left: 45%;">🌺</div>
+<div class="swaying-flower" style="left: 75%;">🌻</div>
+
+<!-- Cỏ ở dưới -->
+<div class="grass"></div>
+
+<div class="card">
+
+<h1>Happy Women's Day 💖</h1>
+
+<button onclick="showHearts()">Nhận quà 🎁</button>
+
+<div id="heartContainer"></div>
+
+<div id="message" class="hidden message">
+Dễ gì nhận được quà <span style="font-size:75px;">😜</span> <br><br>
+Ở đây mới có nè:
+<a href="https://vietconggl999.github.io/Happy-Women-s-Day-8-3-2025/" target="_blank">
+Bấm vào đây 🎁
+</a>
+</div>
+
+</div>
+
+<script>
+
+function showHearts(){
+
+const container=document.getElementById("heartContainer")
+container.innerHTML = "";
+
+// Tạo 20 trái tim nhỏ li ti
+for(let i=0;i<20;i++){
+
+let heart=document.createElement("div")
+heart.className="smallHeart"
+heart.innerHTML="💖"
+
+// Vị trí ngẫu nhiên xung quanh nút bấm
+heart.style.left=(Math.random()*300-150)+"px"
+heart.style.top=(Math.random()*300-150)+"px"
+
+// Hướng bay ngẫu nhiên
+heart.style.setProperty("--x",(Math.random()*200-100)+"px")
+heart.style.setProperty("--y",(Math.random()*200-100)+"px")
+
+container.appendChild(heart)
+
+setTimeout(()=>heart.remove(),1000)
+
+}
+
+// Sau 1 giây, tim nhỏ biến mất và tim to hiện ra
+setTimeout(()=>{
+
+container.innerHTML='<div class="bigHeart">❤️</div>'
+
+// Hiện dòng chữ chúc mừng
+document.getElementById("message").classList.remove("hidden")
+
+},1000)
+
+}
+
+</script>
+
+</body>
+</html>
